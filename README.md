@@ -4,14 +4,11 @@ Overview:
 
 Building a compatibility-based "FriendFinder" application. This full-stack site will take in results from users' surveys, then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
 
-You will use Express to handle routing. Make sure you deploy your app to Heroku so other users can fill it out.
 
 
-### Before You Begin
+* Check out [this demo version of the site](https://friend-finder-fsf.herokuapp.com/). Used  as a model for this assignment. 
 
-* Check out [this demo version of the site](https://friend-finder-fsf.herokuapp.com/). Use this as a model for how we expect your assignment look and operate.
-
-* Create a folder called `FriendFinder`. Inside the folder, organize your directories so it matches the following:
+*Created  `FriendFinder` folder. Inside the folder, we have directories as follows:
 
   ```
   FriendFinder
@@ -31,27 +28,27 @@ You will use Express to handle routing. Make sure you deploy your app to Heroku 
   ```
 
 
-### Submission on BCS
+Going to the localhost 3030 in the browser you will:
 
-* Please submit both the deployed Heroku link to your homework AND the link to the Github Repository!
+1. Click the 'submit' button to find a friend.
 
-### Instructions
+2. A survey page will open. Need to put your name and a link to your photo.
 
-1. In the survey we have 10 questions. Each answer should be on a scale of 1 to 5 based on how much the user agrees or disagrees with a question.
+3. In the survey we have 10 questions. Each answer should be on a scale of 1 to 5 based on how much the user agrees or disagrees with a question.
 
-2.  `server.js` file require the basic npm packages: `express` and `path`.
+    a.  `server.js` file require the basic npm packages: `express` and `path`.
 
-3.  `htmlRoutes.js` file include two routes:
+    b.  `htmlRoutes.js` file include two routes:
 
-   * A GET Route to `/survey` which displays the survey page.
-   * A default, catch-all route that leads to `home.html` which displays the home page.
+         * A GET Route to `/survey` which displays the survey page.
+         * A default, catch-all route that leads to `home.html` which displays the home page.
 
-4.  `apiRoutes.js` file contain two routes:
+    c.  `apiRoutes.js` file contain two routes:
 
-   * A GET route with the url `/api/friends`. (display a JSON of all possible friends).
-   * A POST routes `/api/friends` (used to handle incoming survey results and route to handle the compatibility logic).
+         * A GET route with the url `/api/friends`. (display a JSON of all possible friends).
+         * A POST routes `/api/friends` (used to handle incoming survey results and route to handle the compatibility logic).
 
-5. Application's data is saved inside of `app/data/friends.js` as an array of objects. 
+    d. Application's data is saved inside of `app/data/friends.js`   as an array of objects. 
 
 
 6. Determine the user's most compatible friend using the following as a guide:
@@ -62,38 +59,9 @@ You will use Express to handle routing. Make sure you deploy your app to Heroku 
        * User 1: `[5, 1, 4, 4, 5, 1, 2, 5, 4, 1]`
        * User 2: `[3, 2, 6, 4, 5, 1, 2, 5, 4, 1]`
        * Total Difference: **2 + 1 + 2 =** **_5_**
-   * Remember to use the absolute value of the differences. 
-   * The closest match will be the user with the least amount of difference.
+   * The absolute value of the differences is used. 
+   * The closest match is the user with the least amount of difference.
 
-7. Once found the current user's most compatible friend, display the result as a modal pop-up.
+7. Once found the current user's most compatible friend, a display of the result is a modal pop-up.
    * The modal displays both the name and picture of the closest match.
-
-### Reminder: Submission on BCS
-
-* Please submit both the deployed Heroku link to your homework AND the link to the Github Repository!
-
-- - -
-
-### Minimum Requirements
-
-Attempt to complete homework assignment as described in instructions. If unable to complete certain portions, please pseudocode these portions to describe what remains to be completed. Adding a README.md as well as adding this homework to your portfolio are required as well and more information can be found below. **This assignment must be deployed.**
-
-- - -
-
-### Hosting on Heroku
-
-Now that we have a backend to our applications, we use Heroku for hosting. Please note that while **Heroku is free**, it will request credit card information if you have more than 5 applications at a time or are adding a database.
-
-Please see [Heroku’s Account Verification Information](https://devcenter.heroku.com/articles/account-verification) for more details.
-
-See the [Supplemental Heroku Deployment Guide](../../03-Supplemental/HerokuGuide.md) for in-detail deployment instructions.
-
-- - -
-
-
-### Add To Your Portfolio
-
-After completing the homework please add the piece to your portfolio. Make sure to add a link to your updated portfolio in the comments section of your homework so the TAs can easily ensure you completed this step when they are grading the assignment. To receive an 'A' on any assignment, you must link to it from your portfolio.
-
-- - -
 
