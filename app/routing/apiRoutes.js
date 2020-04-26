@@ -30,9 +30,9 @@ module.exports = function(app) {
             return parseInt(item, 10);
         });
         userData = {
-            "name": req.body.name,
-            "photo": req.body.photo,
-            "scores": b
+            name: req.body.name,
+            photo: req.body.photo,
+            scores: b
         };
 
 
@@ -44,7 +44,7 @@ module.exports = function(app) {
         console.log("Best match friend diff " + bestMatch.friendDifference);
 
 
-        console.log("+++++++=================++++++++++");
+        console.log("=================");
     
         // Loop through all the friend possibilities in the database. 
         for (var i = 0; i < friends.length; i++) {
@@ -65,12 +65,12 @@ module.exports = function(app) {
                 bestMatch.name = friends[i].name;
                 bestMatch.photo = friends[i].photo;
                 bestMatch.friendDifference = totalDifference;
-                // If someone runs the application a second time they won't get themselves
+                /* If someone runs the application a second time they won't get themselves
                     if (bestMatch.name == userName){
                         bestMatch.name = "Edward 'friggin' Snowden";
                         bestMatch.photo = "https://upload.wikimedia.org/wikipedia/commons/6/60/Edward_Snowden-2.jpg";
                         bestMatch.friendDifference = 10;
-                    }
+                    }*/
               
             }
             console.log(totalDifference + " Total Difference");
